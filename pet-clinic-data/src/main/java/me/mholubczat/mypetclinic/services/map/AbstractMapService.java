@@ -1,6 +1,5 @@
 package me.mholubczat.mypetclinic.services.map;
 
-import lombok.val;
 
 import java.util.HashMap;
 import java.util.HashSet;

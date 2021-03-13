@@ -1,11 +1,11 @@
 package me.mholubczat.mypetclinic.services.map;
 
 import me.mholubczat.mypetclinic.model.Vet;
-import me.mholubczat.mypetclinic.services.CrudService;
+import me.mholubczat.mypetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet,Long> implements CrudService<Vet,Long> {
+public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
@@ -29,5 +29,10 @@ public class VetServiceMap extends AbstractMapService<Vet,Long> implements CrudS
     @Override
     public Vet findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Vet findByLastName(String lastName) {
+        return (Vet) map.values().stream().filter(vet -> vet.getLastName().equals(lastName));
     }
 }
